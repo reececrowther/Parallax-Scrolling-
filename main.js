@@ -93,8 +93,8 @@ window.onbeforeunload = function() {
     window.scrollTo(0, 0);
 }
 
-const enterFullIcon = '<img src="/Svgs/full-screen.png">'
-const exitFullIcon = '<img src="/Svgs/exitfullscreen.png">'
+const enterFullIcon = '<img src="Svgs/full-screen.png">'
+const exitFullIcon = '<img src="Svgs/exitfullscreen.png">'
 let fullscreen;
 let fsEnter = document.getElementById('fullscr');
 fsEnter.addEventListener('click', function (e) {
