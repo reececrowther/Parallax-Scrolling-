@@ -91,14 +91,16 @@ svg {
     background: var(--main-color);
     color: white;
 }
-
+#fullscr {
+    z-index: 101;
+}
 #fullscr img{
     width: 2em;
     filter: invert();
 }
 
 #header{
-    position: absolute;
+    position: fixed;
     top:0;
     left:0;
     width: 100%;
@@ -159,7 +161,8 @@ svg {
     font-family: 'Source Code Pro', monospace;
     transform: translateY(-50%);
     z-index: 20;
-    
+    text-transform: uppercase;
+    letter-spacing: 10px;
 }
 
 /*typing ani*/
@@ -202,6 +205,7 @@ svg {
     letter-spacing: 2px;
     font-weight: 400;
     font-family: 'Rubik', sans-serif;
+    text-transform: capitalize;
 }
 
 .home-page-button{
@@ -252,6 +256,10 @@ svg {
     z-index: 30;
 }
 
+#scene2{
+    visibility: hidden;
+}
+
 #moonBg, #scene2Stars{
     object-fit: cover;
     opacity: 0;
@@ -267,7 +275,7 @@ svg {
 
 #info-1{
     position: relative;
-    top: 40%;
+    top: 50%;
     left: 0;
     z-index: 50;
     opacity: 0;
@@ -305,5 +313,105 @@ svg {
 }
 
 
+#scene4BG, #clouds{
+    object-fit: cover;
+    opacity: 0;
+    z-index: 50;
+}
+#sun{
+    z-index: 51;
+    opacity: 0;
+    margin-left: 900px;
+}
+#BackMountains{
+    z-index: 53;
+    margin-top: 800px;
+    object-fit: cover;
+}
+#hiker{
+    z-index: 55;
+    object-fit: cover;
+    margin-top: 800px;
+}
 
+/* icons */
+#icon-section{
+    display: block;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0);
+    opacity: 0;
+}
 
+.icons-row{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    overflow: hidden;
+    padding: 10px;
+    transform: rotate(-20deg);
+    top: -15%;
+    width: 110%;
+    left: -5%;
+    white-space: nowrap;
+}
+
+.icons img{
+    filter:invert();
+    opacity: 0.5;
+    filter: saturate(10);
+}
+
+.icons img:hover{
+    opacity: 1;
+    filter: invert(7%) sepia(57%) saturate(500%) hue-rotate(69deg) brightness(1000%) contrast(80%) drop-shadow(0 0 10px #0f0);
+    
+}
+
+.icons-row div:nth-child(odd){
+    animation: scrollingAni 80s linear infinite;
+    animation-delay: -80s;
+    -webkit-animation-delay: -80s;
+} 
+.icons-row div:nth-child(even){
+    animation: scrollingAni2 80s linear infinite;
+    animation-delay: -40s;
+    -webkit-animation-delay:-40s;
+}
+
+@keyframes scrollingAni{
+    0%, 100%{
+        transform: translateX(0%);
+    }
+    50%{
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes scrollingAni2{
+    0%, 100%{
+        transform: translateX(50%);
+    }
+    50%{
+        transform: translateX(0%);
+    }
+}
+
+#info-2{
+    display: block;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 85%;
+    left: 25%;
+    z-index: 60;
+    opacity: 1;
+    text-align: center;
+    font-size: 3em;
+    color: white;
+    opacity: 0;
+}

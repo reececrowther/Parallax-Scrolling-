@@ -21,6 +21,18 @@ scene1.to("#mediumPlanet", { y: 0 * speed, x: 1.2 * speed }, 0)
 //animate text
 scene1.to("#info", { y: 8 * speed }, 0)
 
+//scene 2 ease
+let scene2vis = gsap.timeline();
+ScrollTrigger.create({
+    animation: scene2vis,
+    trigger: ".scrollElement",
+    start: "990 top",
+    end: "3000 5000",
+    scrub: 1,
+});
+
+scene2vis.to("#scene2",{ css: { visibility: "visible"} }, 0)
+
 
 /* moon increase */
 let moon = gsap.timeline();
@@ -43,13 +55,13 @@ ScrollTrigger.create({
     animation: info1,
     trigger: ".scrollElement",
     start: "1500 top",
-    end: "3000 4000",
+    end: "3000 5000",
     scrub: 1,
 });
 let info = document.getElementById('info-title');
 
 info1.to("#info-1",{ css: { opacity: "1"} }, 0)
-info1.to("#info-1", { y: - 5 * speed, x: 0 * speed }, 0)
+info1.to("#info-1", { y: - 2 * speed, x: 0 * speed }, 0)
 
 window.addEventListener("scroll",(event) =>{
     let scroll = this.scrollY;
@@ -79,13 +91,54 @@ ScrollTrigger.create({
 
 scene3.fromTo("#bigMountain", { y: 300 }, { y: -740 }, 0)
 scene3.fromTo("#smallMountain", { y: 300 }, { y: -740 }, 0)
-scene3.fromTo("#frontMountains", { y: 300 }, { y: -740 }, 0.13)
-scene3.fromTo("#backTrees", { y: 300 }, { y: -740 }, 0.23)
-scene3.fromTo("#rightMountain", { y: 300 }, { y: -800 }, 0.23)
+scene3.fromTo("#frontMountains", { y: 300 }, { y: -740 }, 0.23)
+scene3.fromTo("#backTrees", { y: 300 }, { y: -740 }, 0.33)
+scene3.fromTo("#rightMountain", { y: 300 }, { y: -800 }, 0.53)
 
-scene3.fromTo("#leftTrees", { y: 300 }, { y: -740 }, 0.33)
-scene3.fromTo("#rightTrees", { y: 300 }, { y: -700 }, 0.40)
+scene3.fromTo("#leftTrees", { y: 300 }, { y: -740 }, 0.73)
+scene3.fromTo("#rightTrees", { y: 300 }, { y: -700 }, 0.90)
 
+/* Scene 4 */
+let scene4 = gsap.timeline();
+ScrollTrigger.create({
+    animation: scene4,
+    trigger: ".scrollElement",
+    start: "3000 top",
+    end: "5000 bottom",
+    scrub: 3,
+});
+
+scene4.to("#scene4BG",{ css: { opacity: "1"} }, 0)
+scene4.to("#clouds",{ css: { opacity: "1"} }, 0.1)
+scene4.to("#sun", { y: -3 * speed, x: -9 * speed }, 0.3)
+scene4.to("#sun", { css: { scaleX: "1.3", scaleY: "1.3" , opacity: "1"} }, 0.3)
+scene4.fromTo("#BackMountains", { y: 300 }, { y: -790 }, 0.40)
+scene4.fromTo("#hiker", { y: 300 }, { y: -790 }, 1)
+scene4.to("#info-2",{ css: { opacity: "1"} }, 2)
+
+
+/* skills */
+let icons = gsap.timeline();
+ScrollTrigger.create({
+    animation: icons,
+    trigger: ".scrollElement",
+    start: "5000 top",
+    end: "6000 bottom",
+    scrub: 3,
+});
+icons.to("#icon-section",{ css: { opacity: "0.8"} }, 0)
+
+
+var iconRow = document.getElementsByClassName('icons');
+var a = 0;
+
+for (var i = 0; i < iconRow.length; i++) {
+    var a = Math.floor(Math.random() * 31);
+    var shift = (2 * a);
+    iconRow[i].style.marginLeft = "-1" + shift + "px";
+    console.log(shift);
+}
+console.log(iconRow);
 
 
 //reset scrollbar position after refresh
