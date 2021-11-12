@@ -219,7 +219,7 @@ svg {
     letter-spacing: 2px;
     border-radius: 20px;
     transform: translateY(150px);
-    z-index: 50;
+    z-index: 2050;
     opacity: 0;
     animation: buttonFadeIn 2s ease 4s forwards;
 }
